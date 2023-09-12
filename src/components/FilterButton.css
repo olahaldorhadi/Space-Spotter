@@ -10,7 +10,7 @@
 .filter-button button {
     margin: 10px;
     color: #111111;
-    min-width: 151px;
+    min-width: 175px;
     min-height: 40px;
 }
 
@@ -21,7 +21,7 @@
     width: 141px; 
     background-color: white;
     color: #111111;
-    border: 1px solid #FFB800;
+    border: 1px solid var(--orange);
     border-radius: 5px;
 }
 

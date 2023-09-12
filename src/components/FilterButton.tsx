@@ -2,13 +2,13 @@ import { useState } from 'react';
 import './FilterButton.css';
 
 interface FilterButtonProps {
-    initialDescription: string;
+    description: string;
     inputType: string;
 }
 
-const FilterButton: React.FC<FilterButtonProps> = ({ initialDescription, inputType }) => {
+const FilterButton: React.FC<FilterButtonProps> = ({ description, inputType }) => {
     const [isOpen, setIsOpen] = useState(false);
-    const [description, setDescription] = useState(initialDescription);
+    const [currentDescription, setCurrentDescription] = useState(description);
 
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
@@ -16,16 +16,15 @@ const FilterButton: React.FC<FilterButtonProps> = ({ initialDescription, inputTy
     
 
     const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-        const newDescription = event.currentTarget.value || event.currentTarget.innerText;
-        setDescription(newDescription);
-        console.log("button was clicked", newDescription);
+        const updatedDescription = event.currentTarget.value || event.currentTarget.innerText;
+        setCurrentDescription(updatedDescription);
         toggleDropdown();
     }
-
+    
     return (
         <>
             <div className='filter-button'>
-                <button onClick={toggleDropdown}>{description}</button>
+                <button onClick={toggleDropdown}>{currentDescription}</button>
                 {inputType === 'dropdown' && isOpen && (
                  <div className='dropdown-menu'> 
                     <button onClick={handleButtonClick}>Gløshaugen</button>

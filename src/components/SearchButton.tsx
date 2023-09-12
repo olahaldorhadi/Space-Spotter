@@ -9,7 +9,7 @@ const SearchButton: React.FC<SearchButtonProps> = ({ description }) => {
     return (
         <>
             <div className='search-button'>
-                <p>{description}</p>
+                <button>{description}</button>
             </div>
         </>
     )
