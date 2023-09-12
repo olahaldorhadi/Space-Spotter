@@ -1,0 +1,33 @@
+.filter-button {
+    background-color: #EEEEEE;
+    border-radius: 5px;
+    margin: 5px;
+    min-width: 100px;
+    position: relative; /* Ensures the dropdown menu's position is relative to this container */
+    display: inline-block;
+}
+
+.filter-button p {
+    margin: 10px;
+    color: #111111;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 3px); 
+    left: 0;
+    width: 141px; 
+    background-color: white;
+    color: #111111;
+    border: 1px solid #FFB800;
+    border-radius: 5px;
+}
+
+.dropdown-menu p {
+    margin: 0px;
+    padding: 8px;
+}
+
+.dropdown-menu p:hover {
+    background-color: #CCCCCC;
+}
