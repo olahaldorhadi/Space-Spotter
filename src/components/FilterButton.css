@@ -7,9 +7,11 @@
     display: inline-block;
 }
 
-.filter-button p {
+.filter-button button {
     margin: 10px;
     color: #111111;
+    min-width: 151px;
+    min-height: 40px;
 }
 
 .dropdown-menu {
@@ -23,11 +25,12 @@
     border-radius: 5px;
 }
 
-.dropdown-menu p {
+.dropdown-menu button {
+    display: block;
     margin: 0px;
     padding: 8px;
 }
 
-.dropdown-menu p:hover {
+.dropdown-menu button:hover {
     background-color: #CCCCCC;
 }
