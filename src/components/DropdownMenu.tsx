@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import './FilterButton.css';
+import './DropdownMenu.css';
 
-interface FilterButtonProps {
+interface DropdownMenuProps {
     description: string;
     inputType: string;
 }
 
-const FilterButton: React.FC<FilterButtonProps> = ({ description, inputType }) => {
+const DropdownMenu: React.FC<DropdownMenuProps> = ({ description, inputType }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [currentDescription, setCurrentDescription] = useState(description);
 
@@ -23,7 +23,7 @@ const FilterButton: React.FC<FilterButtonProps> = ({ description, inputType }) =
     
     return (
         <>
-            <div className='filter-button'>
+            <div className='dropdown'>
                 <button onClick={toggleDropdown}>{currentDescription}</button>
                 {inputType === 'dropdown' && isOpen && (
                  <div className='dropdown-menu'> 
@@ -44,4 +44,4 @@ const FilterButton: React.FC<FilterButtonProps> = ({ description, inputType }) =
     )
 }
 
-export default FilterButton;
+export default DropdownMenu;

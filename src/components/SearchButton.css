@@ -17,3 +17,7 @@
         background-color: var(--blue);
     }
 }
+
+.search-button svg {
+    width: 30px;
+}
