@@ -1,4 +1,4 @@
-.filter-button {
+.dropdown {
     background-color: var(--offwhite);
     border-radius: 5px;
     margin: 5px;
@@ -7,7 +7,7 @@
     display: inline-block;
 }
 
-.filter-button button {
+.dropdown button {
     background-color: var(--offwhite);
     margin-top: 10px;
     margin-bottom: 10px;
