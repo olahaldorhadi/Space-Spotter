@@ -1,11 +1,15 @@
 .search-button {
-    background-color: #003459;
+    background-color: #EEEEEE;
     border-radius: 5px;
     margin: 5px;
     min-width: 100px;
 }
 
-.search-button p {
+.search-button button {
     margin: 10px;
+    background-color: var(--dark-blue);
     color: #EEEEEE;
+    &:hover{
+        background-color: var(--blue);
+    }
 }

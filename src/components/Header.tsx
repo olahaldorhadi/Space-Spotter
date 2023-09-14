@@ -1,5 +1,5 @@
 import './Header.css';
-import Logo from '../assets/logo.png';
+import Logo from '../assets/logo_nobg.png';
 
 const Header = () => {
 
@@ -8,7 +8,7 @@ const Header = () => {
       <div className='header'>
         <div className='header-content'>
           <img src={Logo} />
-          <div className='explination-text'>
+          <div className='explanation-text'>
             <h1>Hvor vil du sitte?</h1>
             <p>Søk etter ledige grupperom på din campus</p>
           </div>
