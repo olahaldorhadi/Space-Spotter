@@ -1,16 +1,18 @@
 .filter-button {
-    background-color: #EEEEEE;
+    background-color: var(--offwhite);
     border-radius: 5px;
     margin: 5px;
     min-width: 100px;
-    position: relative; /* Ensures the dropdown menu's position is relative to this container */
+    position: relative;
     display: inline-block;
 }
 
 .filter-button button {
-    margin: 10px;
+    background-color: var(--offwhite);
+    margin-top: 10px;
+    margin-bottom: 10px;
     color: #111111;
-    min-width: 175px;
+    width: 100%;
     min-height: 40px;
 }
 
@@ -19,8 +21,9 @@
     top: calc(100% + 3px); 
     left: 0;
     width: 141px; 
-    background-color: white;
+    background-color: var(--offwhite);
     color: #111111;
+    width: 100%;
     border: 1px solid var(--orange);
     border-radius: 5px;
 }
@@ -29,6 +32,7 @@
     display: block;
     margin: 0px;
     padding: 8px;
+    border-radius: 0px;
 }
 
 .dropdown-menu button:hover {
