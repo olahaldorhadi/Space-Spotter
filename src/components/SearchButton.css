@@ -7,9 +7,9 @@
 
 .search-button button {
     margin: 10px;
-    background-color: var(--darker-blue);
+    background-color: var(--dark-blue);
     color: #EEEEEE;
     &:hover{
-        background-color: var(--dark-blue);
+        background-color: var(--blue);
     }
 }

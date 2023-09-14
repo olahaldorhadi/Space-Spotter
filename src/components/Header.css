@@ -22,12 +22,12 @@
     width:fit-content;
 }
 
-.explination-text {
+.explanation-text {
     margin-left: 20px;
     text-align: left;
 }
 
-.explination-text h1, .explination-text p {
+.explanation-text h1, .explanation-text p {
     margin-top: 10px;
     margin-bottom: 10px;
 }
