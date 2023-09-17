@@ -50,17 +50,23 @@ const fetchRoomDetails = async () => {
   return response.json();
 };
 
+interface UseFilteredRoomsReturnType {
+  rooms: {
+    key: number;
+    name: string;
+    size: string;
+    bookable: string;
+    type: string;
+    buildingname: string;
+    areaname: string;
+  }[] | undefined;
+  isLoading: boolean;
+  error: CustomError | null;
+}
 
-function useFilteredRooms() {
+function useFilteredRooms(): UseFilteredRoomsReturnType {
   const { data, error, isLoading } = useQuery<DataResponse, CustomError>('roomDetails', fetchRoomDetails);
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>An error occurred: {error.message}</div>;
-  }
   // Define your filters here
   const sizeFilter = (room: Room) => parseInt(room.size) >= 2; // Example: size greater than or equal to 20
   const buildingNameFilter = (room: Room) => room.buildingname === "Realfagbygget"; // Replace with actual building name
