@@ -1,0 +1,19 @@
+.filter-section--filter-section {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    background-color: var(--orange);
+    
+    
+}
+
+.filter-section--section {
+    background-color: var(--orange);
+    display: flex;
+    align-items: flex-start;
+    border-radius: 5px;
+    padding: 5px;
+}

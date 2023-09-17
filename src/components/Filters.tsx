@@ -1,14 +1,15 @@
 import Dropdown from './DropdownMenu';
-import './Filters.css';
 import SearchButton from './SearchButton';
+import './Filters.css';
+
 
 const Filters = () => {
 
     return (
         <>
-            <div className='filters'>
-                <div className='filters-section'>
-                    <Dropdown description={'Hvilken campus?'} inputType={'dropdown'} />
+            <div className='filters--filters'>
+                <div className='filters--filters-section'>
+                    <Dropdown description={'Hvilket campus?'} inputType={'dropdown'} />
                     {/* <FilterButton description={'Når?'} inputType={''} />
                     <FilterButton description={'Antall?'} inputType={''} /> */}
                     <SearchButton description={'Søk'} />

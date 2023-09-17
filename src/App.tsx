@@ -3,6 +3,7 @@ import React from 'react'
 import './App.css'
 import Header from './components/Header'
 import Filters from './components/Filters'
+import FilterSection from './components/FilterSection'
 import { QueryClient, QueryClientProvider } from 'react-query';
 import MyComponent from './components/MyComponent';
 
@@ -12,11 +13,14 @@ const App = () => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <>
-        <Header />
-        <Filters />
+    <div className = "app-styling">
+      <Header />
+      <Filters />
+      <div>
+        <FilterSection />
         <MyComponent />
-      </>
+      </div>
+    </div>
     </QueryClientProvider>
   )
 }
