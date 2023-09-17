@@ -66,9 +66,7 @@ function useFilteredRooms() {
   const buildingNameFilter = (room: Room) => room.buildingname === "Realfagbygget"; // Replace with actual building name
   const areaNameFilter = (room: Room) => room.areaname === "Gl\u00f8shaugen"; // Replace with actual area name
 
-  // const filteredRooms = data?.data.filter(room => sizeFilter(room) && buildingNameFilter(room) && areaNameFilter(room));
   
-  // return <div style={{ color: 'black' }}>Data: {JSON.stringify(filteredRooms)}</div>;
   // Apply the filters and transform the data to the desired format
   const filteredRooms = data?.data.filter(room => sizeFilter(room) && buildingNameFilter(room) && areaNameFilter(room))
     .map((room, index) => ({
@@ -81,14 +79,8 @@ function useFilteredRooms() {
       areaname: room.areaname // You might want to replace this with actual data from your dataset
     }));
   
-  // return filteredRooms;
 
   return { rooms: filteredRooms, isLoading, error };
-  //<ul style={{color: 'black'}}>
-  //   {filteredRooms?.map((room) => (
-  //     <li key={room.key}>{room.name} - {room.bookable}</li>
-  //   ))}
-  // </ul>
 }
 
 
