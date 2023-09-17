@@ -26,6 +26,7 @@
     width: 100%;
     border: 1px solid var(--orange);
     border-radius: 5px;
+    z-index: 2;
 }
 
 .dropdown-menu button {
@@ -33,6 +34,8 @@
     margin: 0px;
     padding: 8px;
     border-radius: 0px;
+    background-color: white;
+
 }
 
 .dropdown-menu button:hover {

@@ -1,4 +1,6 @@
-import { useQuery } from 'react-query';
+import { useQuery } from 'react-query'; 
+
+//This is a custom hook
 
 interface CustomError {
   message: string;
@@ -49,7 +51,7 @@ const fetchRoomDetails = async () => {
 };
 
 
-function MyComponent() {
+function useFilteredRooms() {
   const { data, error, isLoading } = useQuery<DataResponse, CustomError>('roomDetails', fetchRoomDetails);
 
   if (isLoading) {
@@ -60,7 +62,7 @@ function MyComponent() {
     return <div>An error occurred: {error.message}</div>;
   }
   // Define your filters here
-  const sizeFilter = (room: Room) => parseInt(room.size) >= 100; // Example: size greater than or equal to 20
+  const sizeFilter = (room: Room) => parseInt(room.size) >= 2; // Example: size greater than or equal to 20
   const buildingNameFilter = (room: Room) => room.buildingname === "Realfagbygget"; // Replace with actual building name
   const areaNameFilter = (room: Room) => room.areaname === "Gl\u00f8shaugen"; // Replace with actual area name
 
@@ -73,7 +75,7 @@ function MyComponent() {
       key: index,
       name: room.name,
       size: room.size, // Assuming `room.size` is the property for size
-      bookable: room.student_booking == "1" ? "Kan bookes" : "Kan ikke bookes", // You might want to replace this with actual data from your dataset
+      bookable: room.student_booking == "1" ? "Kan bookes" : "Kan ikke bookes",
       type: room.type, // You might want to replace this with actual data from your dataset
       buildingname: room.buildingname, // You might want to replace this with actual data from your dataset
       areaname: room.areaname // You might want to replace this with actual data from your dataset
@@ -81,11 +83,13 @@ function MyComponent() {
   
   // return filteredRooms;
 
-  return <ul style={{color: 'black'}}>
-    {filteredRooms?.map((room) => (
-      <li key={room.key}>{room.name} - {room.bookable}</li>
-    ))}
-  </ul>
+  return { rooms: filteredRooms, isLoading, error };
+  //<ul style={{color: 'black'}}>
+  //   {filteredRooms?.map((room) => (
+  //     <li key={room.key}>{room.name} - {room.bookable}</li>
+  //   ))}
+  // </ul>
 }
 
-export default MyComponent;
+
+export default useFilteredRooms;
