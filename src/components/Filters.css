@@ -1,19 +1,20 @@
-.filters {
+.filters--filters {
     background-color: var(--dark-blue);
     width: 100%;
     height: 80px;
-    position: fixed;
-    top: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
-.filters-section {
+.filters--filters-section {
     display: flex;
+    height: 60px;
     align-items: center;
+    justify-content: center;
     background-color: var(--orange);
     border-radius: 5px;
     padding: 5px;
-    margin-bottom: 15px;
 }

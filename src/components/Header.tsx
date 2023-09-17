@@ -1,5 +1,5 @@
 import './Header.css';
-import Logo from '../assets/logo_nobg.png';
+import Logo from '../assets/SpaceSpotterLogo.png';
 
 const Header = () => {
 
