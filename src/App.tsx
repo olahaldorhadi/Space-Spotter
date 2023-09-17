@@ -6,6 +6,7 @@ import FilterSection from './components/FilterSection';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import RoomManager from './components/RoomManager';
 import useFilteredRooms from './components/useFilteredRooms';
+import FilterButton from './components/FilterButton';
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => {
     <div className="app-styling">
       <Header />
       <Filters />
+      <FilterButton description={''} />
       <div>
         <FilterSection />
         <RoomManager rooms={fetchedRooms || []} />

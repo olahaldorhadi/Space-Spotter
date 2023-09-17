@@ -9,7 +9,7 @@ const Filters = () => {
         <>
             <div className='filters--filters'>
                 <div className='filters--filters-section'>
-                    <Dropdown description={'Hvilket campus?'} inputType={'dropdown'} />
+                    <Dropdown description={'Hvilket campus?'} inputType={'campus'} />
                     {/* <FilterButton description={'Når?'} inputType={''} />
                     <FilterButton description={'Antall?'} inputType={''} /> */}
                     <SearchButton description={'Søk'} />

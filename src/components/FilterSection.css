@@ -17,3 +17,16 @@
     border-radius: 5px;
     padding: 5px;
 }
+
+.filter-section--filter-section input {
+    background-color: var(--offwhite);
+    color: var(--offblack);
+    border-radius: 5px;
+    margin: 5px;
+    width: 100px;
+    min-height: 44px;
+    padding: 8px;
+    position: relative;
+    display: inline-block;
+    border: none;
+}
