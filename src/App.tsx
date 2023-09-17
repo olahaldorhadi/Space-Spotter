@@ -12,11 +12,11 @@ const App = () => {
 
   return (
     <QueryClientProvider client={queryClient}>
-    <>
-      <Header />
-      <Filters />
-      <MyComponent />
-    </>
+      <>
+        <Header />
+        <Filters />
+        <MyComponent />
+      </>
     </QueryClientProvider>
   )
 }
