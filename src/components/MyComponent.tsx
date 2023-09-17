@@ -40,7 +40,7 @@ function MyComponent() {
     return <div>An error occurred: {error.message}</div>;
   }
 
-  return <div>Data: {JSON.stringify(data)}</div>;
+  return <div style={{ color: 'black' }}>Data: {JSON.stringify(data)}</div>;
 }
 
 export default MyComponent;
