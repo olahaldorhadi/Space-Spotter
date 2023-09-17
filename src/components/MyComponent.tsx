@@ -1,28 +1,46 @@
 import { useQuery } from 'react-query';
-// import axios from 'axios';
+
+interface CustomError {
+  message: string;
+}
+
+function getCurrentWeek() {
+  const date = new Date();
+  const firstDayOfYear = new Date(date.getFullYear(), 0, 1);
+  const pastDaysOfYear = (date.getTime() - firstDayOfYear.getTime()) / 86400000;
+  return Math.ceil((pastDaysOfYear + firstDayOfYear.getDay() + 1) / 7);
+}
+
+const currentWeek = getCurrentWeek();
+const currentYear = new Date().getFullYear().toString();
+
+const fetchRoomDetails = async () => {
+  const response = await fetch('/ntnu/ws/room/2.0/allrooms.php?year=' + currentYear + '&week=' + currentWeek + '&fulldetails=1', {
+    method: "GET",
+    headers: {
+      "accept": "application/json"
+    }
+  });
+
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
+
+  return response.json();
+};
 
 function MyComponent() {
-    const { isLoading, error, data } = useQuery({
-        queryKey: ['repoData'],
-        queryFn: () =>
-          fetch('https://tp.educloud.no/tp/ws/roombooking/possible.php?start=2023-09-235T12%3A15%3A00&end=2023-09-23T14%3A00%3A00').then(
-            (res) => res.json(),
-          ),
-      })
-    
-      if (isLoading) return 'Loading...'
-    
-      if (error) return 'An error has occurred: ' // + error.message
-    
-      return (
-        <div>
-          <h1>{data.name}</h1>
-          <p>{data.description}</p>
-          <strong>👀 {data.subscribers_count}</strong>{' '}
-          <strong>✨ {data.stargazers_count}</strong>{' '}
-          <strong>🍴 {data.forks_count}</strong>
-        </div>
-      )
-    }
+  const { data, error, isLoading } = useQuery<unknown, CustomError>('roomDetails', fetchRoomDetails);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>An error occurred: {error.message}</div>;
+  }
+
+  return <div>Data: {JSON.stringify(data)}</div>;
+}
 
 export default MyComponent;
