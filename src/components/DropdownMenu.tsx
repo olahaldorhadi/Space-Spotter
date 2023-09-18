@@ -4,6 +4,7 @@ import './DropdownMenu.css';
 interface DropdownMenuProps {
     description: string;
     inputType: string;
+    onChange: (value: string) => void;
 }
 
 export const campusList = [
@@ -34,7 +35,57 @@ export const campusList = [
   ]
   
 
-const DropdownMenu: React.FC<DropdownMenuProps> = ({ description, inputType }) => {
+// const DropdownMenu: React.FC<DropdownMenuProps> = ({ description, inputType }) => {
+//     const [isOpen, setIsOpen] = useState(false);
+//     const [currentDescription, setCurrentDescription] = useState(description);
+
+//     const toggleDropdown = () => {
+//         setIsOpen(!isOpen);
+//     };
+    
+
+//     const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+//         const updatedDescription = event.currentTarget.value || event.currentTarget.innerText;
+//         setCurrentDescription(updatedDescription);
+//         toggleDropdown();
+
+//         // Call the onChange prop with the new value
+//         onChange(updatedDescription);
+//     }
+    
+//     return (
+//         <>
+//             <div className='dropdown'>
+//                 <button onClick={toggleDropdown}>{currentDescription}</button>
+//                 {inputType === "building" && isOpen && (
+//                     <div className='dropdown-menu'> 
+//                         {campusList.map(campus => (
+//                             <button onClick={handleButtonClick} key={campus.key}>{campus.optionsText}</button>
+//                         ))}
+//                     </div>
+//                 )}
+//                 {/* {isOpen && inputType === "building" (
+//                     <div className='dropdown-menu'> 
+//                         {campusList.map(campus => (
+//                             <button onClick={handleButtonClick} key={campus.key}>{campus.optionsText}</button>
+//                         ))}
+//                     </div>
+//                 )} */}
+//                 {inputType === "roomtype" && isOpen && (
+//                     <div className='dropdown-menu'> 
+//                         {typeList.map(type => (  // Changed from campusList to typeList for room types
+//                             <button onClick={handleButtonClick} key={type.key}>{type.optionsText}</button>
+//                         ))}
+//                     </div>
+//                 )}
+//             </div>
+//         </>
+//     )
+// }
+
+// export default DropdownMenu;
+
+const DropdownMenu: React.FC<DropdownMenuProps> = ({ description, inputType, onChange }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [currentDescription, setCurrentDescription] = useState(description);
 
@@ -42,35 +93,31 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ description, inputType }) =
         setIsOpen(!isOpen);
     };
     
-
     const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         const updatedDescription = event.currentTarget.value || event.currentTarget.innerText;
         setCurrentDescription(updatedDescription);
         toggleDropdown();
+
+        // Call the onChange prop with the new value
+        console.log(updatedDescription)
+        onChange(updatedDescription);
     }
     
     return (
         <>
             <div className='dropdown'>
                 <button onClick={toggleDropdown}>{currentDescription}</button>
-                {inputType === "building" && isOpen && (
+                {inputType === "campus" && isOpen && (
                     <div className='dropdown-menu'> 
                         {campusList.map(campus => (
                             <button onClick={handleButtonClick} key={campus.key}>{campus.optionsText}</button>
                         ))}
                     </div>
                 )}
-                {/* {isOpen && inputType === "building" (
-                    <div className='dropdown-menu'> 
-                        {campusList.map(campus => (
-                            <button onClick={handleButtonClick} key={campus.key}>{campus.optionsText}</button>
-                        ))}
-                    </div>
-                )} */}
                 {inputType === "roomtype" && isOpen && (
                     <div className='dropdown-menu'> 
-                        {campusList.map(campus => (
-                            <button onClick={handleButtonClick} key={campus.key}>{campus.optionsText}</button>
+                        {typeList.map(type => (
+                            <button onClick={handleButtonClick} key={type.key}>{type.optionsText}</button>
                         ))}
                     </div>
                 )}
@@ -80,3 +127,4 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ description, inputType }) =
 }
 
 export default DropdownMenu;
+
