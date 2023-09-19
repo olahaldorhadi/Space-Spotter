@@ -8,7 +8,6 @@ import RoomManager from './components/RoomManager';
 import useFilteredRooms from './components/useFilteredRooms';
 // import FilterButton from './components/FilterButton';
 import { FilterProvider } from './components/FilterContext';
-import FocusedRoom from './components/FocusedRoom';
 
 const queryClient = new QueryClient();
 
@@ -38,10 +37,7 @@ const AppContent = () => {
         <div className="app-styling">
           <Header />
           <Filters />
-          {/* <FilterButton description={''} /> */}
-          {/* <FocusedRoom room={testRoom} /> */}
           <div>
-            {/* <FilterSection /> */}
             <RoomManager rooms={fetchedRooms || []} />
           </div>
         </div>

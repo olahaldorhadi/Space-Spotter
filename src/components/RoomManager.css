@@ -1,0 +1,71 @@
+.RoomManager--ListContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.RoomManager--EntireList {
+    margin-top: 10px;
+}
+
+.RoomManager--ListItem {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+    width: 50%;
+    justify-self: center;
+    font-size: large;
+    color: var(--offblack);
+    padding: 0px 10px;
+    border-top: 1px black solid;
+    border-bottom: 1px black solid;
+    border-left: 2px black solid;
+    border-right: 2px black solid;
+    background-color: var(--offwhite);
+}
+
+.RoomManager--Container {
+    color: var(--offblack);
+    border: 2px black solid;
+    width: 500px;
+    /* margin-left: auto;
+    margin-right: auto; */
+    flex-direction: column;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.RoomManager--Top-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;  /* Add this line */
+    display: flex;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.RoomManager--Top-row h2 {
+    width: fit-content;
+    margin: 0;
+}
+
+.RoomManager-Star-button {
+    width: 60px;
+    margin: 0px;
+}
+
+.RoomManager-Star-button button{
+    box-sizing: border-box;
+    background-color: var(--offwhite);
+    border: 1px black solid;
+    color: var(--offblack);
+    border-radius: 5px;
+    margin: 5px;
+    width: 50px;
+    height: 50px;
+    padding: 8px;
+    /* position: relative; */
+    display: inline-block;
+}
