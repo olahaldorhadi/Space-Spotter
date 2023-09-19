@@ -17,6 +17,7 @@ interface Room {
   areaname: string;
   student_booking: string;
   type: string;
+  favorite: boolean;
   // add other properties as necessary
 }
 
@@ -61,6 +62,7 @@ interface UseFilteredRoomsReturnType {
     type: string;
     buildingname: string;
     areaname: string;
+    favorite: boolean;
   }[] | undefined;
   isLoading: boolean;
   error: CustomError | null;
@@ -71,16 +73,18 @@ function useFilteredRooms(): UseFilteredRoomsReturnType {
   
   const { campus, size, roomType, favorites } = useContext(FilterContext);
   console.log("Size: " + size)
-  console.log("Size: " + size)
+  console.log("Favorites: " + favorites)
 
   // Define your filters here
-  const sizeFilter = (room: Room) => parseInt(room.size) >= size; // Example: size greater than or equal to 20
-  const areaNameFilter = (room: Room) => room.areaname === campus; // Replace with actual area name
+  const areaNameFilter = (room: Room) => room.areaname === campus; 
+  const sizeFilter = (room: Room) => parseInt(room.size) >= size; 
   const typeFilter = (room: Room) => room.type === roomType;
+  const favoritesFilter = (room: Room) => room.favorite === favorites;
+  // const favoritesFilter = () => true;
 
   
   // Apply the filters and transform the data to the desired format
-  const filteredRooms = data?.data.filter(room => sizeFilter(room) && areaNameFilter(room) && typeFilter(room) )
+  const filteredRooms = data?.data.filter(room => sizeFilter(room) && areaNameFilter(room) && typeFilter(room) && !favoritesFilter(room))
     .map((room, index) => ({
       key: index,
       name: room.name,
