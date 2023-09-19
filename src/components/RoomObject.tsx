@@ -6,6 +6,7 @@ export type RoomObject = {
     type: string;
     buildingname: string;
     areaname: string;
+    favorite: boolean; // Added, remove if anything doesn't work
 };
 
 export type RoomManagerProps = {
