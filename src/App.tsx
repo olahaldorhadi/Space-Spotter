@@ -23,15 +23,15 @@ const AppContent = () => {
     return <div>An error occurred: {error.message}</div>;
   }
   
-  const testRoom = {
-      key: 1,
-      name: "Test Room",
-      size: "20",
-      bookable: "Yes",
-      type: "Seminar",
-      buildingname: "Test Building",
-      areaname: "Test Area",
-  };
+  // const testRoom = {
+  //     key: 1,
+  //     name: "Test Room",
+  //     size: "20",
+  //     bookable: "Yes",
+  //     type: "Seminar",
+  //     buildingname: "Test Building",
+  //     areaname: "Test Area",
+  // };
 
   return (
     <>

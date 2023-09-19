@@ -6,13 +6,13 @@ import StarButton from "./StarButton";
 function RoomManager({ rooms }: RoomManagerProps): React.ReactNode {
 
     const [focusedRoom, setFocusedRoom] = useState({
-        key: 1,
-        name: "Test Room",
-        size: "20",
-        bookable: "Yes",
-        type: "Seminar",
-        buildingname: "Test Building",
-        areaname: "Test Area",
+        key: -1,
+        name: "",
+        size: "",
+        bookable: "",
+        type: "",
+        buildingname: "",
+        areaname: "",
     });
 
     const handleClick = (room: typeof rooms[0]) => {
@@ -21,13 +21,13 @@ function RoomManager({ rooms }: RoomManagerProps): React.ReactNode {
 
     return (
         <>
-            <div className='RoomManager--Container'>
+            <div className='RoomManager--Container' style={{ display: focusedRoom.key === -1 ? 'none' : 'block' }}>
                 <div className="RoomManager--Top-row">
                     <h2>{focusedRoom.name}</h2>
                     <StarButton description={"☆"} />
                 </div>  
                 <p>Størrelse: {focusedRoom.size}</p>
-                <p>Bookable{focusedRoom.bookable}</p>
+                <p>{focusedRoom.bookable}</p>
                 <p>Type: {focusedRoom.type}</p>
                 <p>Bygning: {focusedRoom.buildingname}</p>
                 <p>Campus: {focusedRoom.areaname}</p>
