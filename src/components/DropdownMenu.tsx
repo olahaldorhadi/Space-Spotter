@@ -13,11 +13,9 @@ export const campusList = [
     { key: 2, optionsText: "Kalvskinnet" },
     { key: 3, optionsText: "Øya" },
     { key: 4, optionsText: "Tunga" },
-    { key: 5, optionsText: "Elgseter" },
-    { key: 6, optionsText: "Lerkendal" },
-    { key: 7, optionsText: "Moholt" },
-    { key: 8, optionsText: "Olavskvartalet" },
-    { key: 9, optionsText: "Solsiden" },
+    { key: 5, optionsText: "Moholt" },
+    { key: 6, optionsText: "Olavskvartalet" },
+    { key: 7, optionsText: "Solsiden" },
   ]
 
   export const typeList = [

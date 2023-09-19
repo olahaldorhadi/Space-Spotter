@@ -9,8 +9,8 @@ const Header = () => {
         <div className='header-content'>
           <img src={Logo} />
           <div className='explanation-text'>
-            <h1>Hvor vil du sitte?</h1>
-            <p>Søk etter ledige grupperom på din campus</p>
+            <h1>Trenger du et rom?</h1>
+            <p>Finn oversikt over rom på din campus!</p>
           </div>
         </div>
       </div>

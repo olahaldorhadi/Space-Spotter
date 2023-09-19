@@ -49,7 +49,6 @@ const fetchRoomDetails = async () => {
   if (!response.ok) {
     throw new Error('Network response was not ok');
   }
-
   return response.json();
 };
 
@@ -84,7 +83,7 @@ function useFilteredRooms(): UseFilteredRoomsReturnType {
 
   
   // Apply the filters and transform the data to the desired format
-  const filteredRooms = data?.data.filter(room => sizeFilter(room) && areaNameFilter(room) && typeFilter(room) && !favoritesFilter(room))
+  const filteredRooms = data?.data.filter(room => sizeFilter(room) && areaNameFilter(room) && typeFilter(room) /*&& !favoritesFilter(room)*/)
     .map((room, index) => ({
       key: index,
       name: room.name,
