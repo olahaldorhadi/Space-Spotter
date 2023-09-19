@@ -2,8 +2,9 @@ import Dropdown from './DropdownMenu';
 import SearchButton from './SearchButton';
 import './Filters.css';
 import FavoritesButton from './FavoritesButton';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { FilterContext } from './FilterContext';
+import { setItem, getItem, removeItem } from '../utils/sessionStorageUtil';
 
 
 const Filters = () => {
@@ -12,8 +13,18 @@ const Filters = () => {
     // const [size, setSize] = useState('');
     // const [roomType, setRoomType] = useState('');
     // const [favorites, setFavorites] = useState(false);
+    const [localCampus, setLocalCampus] = useState<string>(() => getItem("campus") || "Hvilket campus?");
+    const [localSize, setLocalSize] = useState<any>(() => parseInt(getItem("minSize")) || "Størrelse?");
+    const [localRoomType, setLocalRoomType] = useState<string>(() => getItem("roomType") || "Romtype?");
+    
+    const {campus, setCampus, size, setSize, roomType, setRoomType, favorites, setFavorites} = useContext(FilterContext);
 
-    const { campus, setCampus, size, setSize, roomType, setRoomType, favorites, setFavorites } = useContext(FilterContext);
+    useEffect(() => {
+        setCampus(localCampus);
+        setSize(localSize);
+        setRoomType(localRoomType);
+    }, [localCampus, localSize, localRoomType]);
+    
 
     // return (
     //     <>
@@ -33,25 +44,28 @@ const Filters = () => {
             <div className='filters--filters'>
                 <div className='filters--filters-section'>
                     <Dropdown 
-                        description={'Hvilket campus?'} 
+                        description={localCampus} 
                         inputType={'campus'} 
                         onChange={(value: string): void => {
-                            setCampus(value);
+                            setLocalCampus(value);
+                            setItem("campus", value) // Method from sessionStorage which saves the campus with the key "campus"
                         }} 
                     />
                     <input 
                         type="number" 
-                        placeholder='Størrelse?' 
+                        placeholder={localSize}
                         className='filters--number-input' 
                         onChange={(e): void => {
-                            setSize(e.target.value);
+                            setLocalSize(e.target.value);
+                            setItem("minSize", e.target.value)
                         }} 
                     />
                     <Dropdown 
-                        description={'Romtype'} 
+                        description={localRoomType} 
                         inputType={'roomtype'} 
                         onChange={(value: string): void => {
-                            setRoomType(value);
+                            setLocalRoomType(value);
+                            setItem("roomType", value)
                         }} 
                     />
                     <FavoritesButton 
