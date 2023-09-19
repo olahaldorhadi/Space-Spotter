@@ -1,4 +1,6 @@
 import { useQuery } from 'react-query'; 
+import { useContext } from 'react';
+import { FilterContext } from './FilterContext';
 
 //This is a custom hook
 
@@ -50,25 +52,35 @@ const fetchRoomDetails = async () => {
   return response.json();
 };
 
+interface UseFilteredRoomsReturnType {
+  rooms: {
+    key: number;
+    name: string;
+    size: string;
+    bookable: string;
+    type: string;
+    buildingname: string;
+    areaname: string;
+  }[] | undefined;
+  isLoading: boolean;
+  error: CustomError | null;
+}
 
-function useFilteredRooms() {
+function useFilteredRooms(): UseFilteredRoomsReturnType {
   const { data, error, isLoading } = useQuery<DataResponse, CustomError>('roomDetails', fetchRoomDetails);
+  
+  const { campus, size, roomType, favorites } = useContext(FilterContext);
+  console.log("Size: " + size)
+  console.log("Size: " + size)
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>An error occurred: {error.message}</div>;
-  }
   // Define your filters here
-  const sizeFilter = (room: Room) => parseInt(room.size) >= 2; // Example: size greater than or equal to 20
-  const buildingNameFilter = (room: Room) => room.buildingname === "Realfagbygget"; // Replace with actual building name
-  const areaNameFilter = (room: Room) => room.areaname === "Gl\u00f8shaugen"; // Replace with actual area name
+  const sizeFilter = (room: Room) => parseInt(room.size) >= size; // Example: size greater than or equal to 20
+  const areaNameFilter = (room: Room) => room.areaname === campus; // Replace with actual area name
+  const typeFilter = (room: Room) => room.type === roomType;
 
   
   // Apply the filters and transform the data to the desired format
-  const filteredRooms = data?.data.filter(room => sizeFilter(room) && buildingNameFilter(room) && areaNameFilter(room))
+  const filteredRooms = data?.data.filter(room => sizeFilter(room) && areaNameFilter(room) && typeFilter(room) )
     .map((room, index) => ({
       key: index,
       name: room.name,
