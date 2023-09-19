@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import {  RoomManagerProps } from './RoomObject'
 import './RoomManager.css'
-import StarButton from "./StarButton";
 
-function RoomManager({ rooms }: RoomManagerProps): React.ReactNode {
+function RoomManager({ rooms: initialRooms }: RoomManagerProps): React.ReactNode {
+
+    const rooms = initialRooms.map(room => ({
+        ...room,
+        favorite: false,
+    }));
 
     const [focusedRoom, setFocusedRoom] = useState({
         key: -1,
@@ -13,10 +17,22 @@ function RoomManager({ rooms }: RoomManagerProps): React.ReactNode {
         type: "",
         buildingname: "",
         areaname: "",
+        favorite: false,
     });
 
     const handleClick = (room: typeof rooms[0]) => {
+        console.log(focusedRoom.areaname)
+        console.log(focusedRoom.favorite)
         setFocusedRoom(room);
+    }
+
+    const handleFavoriteClick = () => {
+        console.log(focusedRoom.favorite)
+        setFocusedRoom(prevState => ({
+            ...prevState,
+            favorite: !prevState.favorite,
+        }))
+        console.log(focusedRoom.favorite)
     }
 
     return (
@@ -24,7 +40,11 @@ function RoomManager({ rooms }: RoomManagerProps): React.ReactNode {
             <div className='RoomManager--Container' style={{ display: focusedRoom.key === -1 ? 'none' : 'block' }}>
                 <div className="RoomManager--Top-row">
                     <h2>{focusedRoom.name}</h2>
-                    <StarButton description={"☆"} />
+                    <div className='RoomManager-Star-button'>
+                        <button onClick={handleFavoriteClick}>
+                            ☆
+                        </button>
+                    </div>
                 </div>  
                 <p>Størrelse: {focusedRoom.size}</p>
                 <p>{focusedRoom.bookable}</p>
