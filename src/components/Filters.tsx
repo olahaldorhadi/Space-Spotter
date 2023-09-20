@@ -56,7 +56,7 @@ const Filters = () => {
                         min="1"
                         onChange={(e): void => { 
                             const value = parseInt(e.target.value);
-                            setSize(value < 1 ? 1 : value); 
+                            setSize(value < 1 ? 1 : value);
                         }} 
                     />
                     <Dropdown 
