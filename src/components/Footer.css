@@ -1,47 +1,50 @@
 /* Common header styles for both desktop and mobile */
-.header {
+.footer--footer {
     background-color: var(--dark-blue);
     width: 100%;
     height: auto;
-    top: 0;
     display: flex;
     align-items: center;
     justify-content: center; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
-.header-content {
+.footer--footer-content {
     max-width: 90%; 
     width: 100%;
     display: flex;
     flex-direction: column; 
     align-items: center; 
     text-align: center; 
-    margin-top: 4%;
     margin-bottom: 1%;
 }
 
-.logo {
+.footer--logo {
     height: auto; 
     width: 100%; 
     max-width: 200px; 
     margin-bottom: 10px; 
 }
 
-.header-content img {
-    height: 20vh;
+.footer--footer-content img {
+    height: 15vh;
     width: auto;
     max-width: 100%;
 }
 
-.explanation-text {
+.footer--explanation-text {
     text-align: center; 
     font-size: 1em; 
     color: var(--offwhite);
     margin-top: 10px; 
 }
 
-.explanation-text h1,
-.explanation-text p {
+.footer--explanation-text h1,
+.footer--explanation-text p {
     margin-top: 5px;
     margin-bottom: 10px;
 }

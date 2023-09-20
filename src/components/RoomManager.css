@@ -7,26 +7,32 @@
     margin-top: 10px;
 }
 
+
 .room-manager--list-item {
     display: flex;
     flex-wrap: wrap;
     text-align: left;
-    width: 50%;
+    width: 70%;
     justify-self: center;
     font-size: large;
     color: var(--offblack);
     padding: 0px 10px;
-    border-top: 1px black solid;
-    border-bottom: 1px black solid;
-    border-left: 2px black solid;
-    border-right: 2px black solid;
+    border-top: 1px var(--orange) solid;
+    border-bottom: 1px var(--orange) solid;
+    border-left: 2px var(--orange)solid;
+    border-right: 2px var(--orange) solid;
     background-color: var(--offwhite);
+}
+
+.room-manager--list-item:hover {
+    background-color: var(--light-blue);
 }
 
 .room-manager--container {
     color: var(--offblack);
-    border: 2px black solid;
-    width: 500px;
+    border: 2px var(--orange) solid;
+    background-color: var(--offwhite);
+    width: 70%;
     /* margin-left: auto;
     margin-right: auto; */
     flex-direction: column;
@@ -35,15 +41,17 @@
     margin-right: auto;
     margin-top: 10px;
     padding: 10px;
+    margin-bottom: 10px;
 }
 
 .room-manager--top-row {
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;  /* Add this line */
+    align-items: center;
     display: flex;
     padding-left: 24px;
     padding-right: 24px;
+    border-bottom: 3px var(--light-organge) solid;
 }
 
 .room-manager--top-row h2 {
@@ -59,7 +67,7 @@
 .room-manager--star-button{
     box-sizing: border-box;
     background-color: var(--offwhite);
-    border: 1px black solid;
+    border: 1px var(--offblack) solid;
     color: var(--offblack);
     border-radius: 5px;
     margin: 5px;

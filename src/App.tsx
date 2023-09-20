@@ -8,6 +8,7 @@ import RoomManager from './components/RoomManager';
 import useFilteredRooms from './components/useFilteredRooms';
 // import FilterButton from './components/FilterButton';
 import { FilterProvider } from './components/FilterContext';
+import Footer from './components/Footer';
 
 const queryClient = new QueryClient();
 
@@ -34,16 +35,16 @@ const AppContent = () => {
 
   return (
     <>
+      <div className="main-content">
         <div className="app-styling">
           <Header />
           <Filters />
-          <div>
+          <div className="roommanager-div">
             <RoomManager rooms={fetchedRooms || []} />
           </div>
         </div>
-        <div>
-          <p>Pssst, du kan trykke på et rom for å se mer informasjon eller opprette en favoritt</p>
-        </div>
+        <Footer />
+      </div>
     </>
   );
 };

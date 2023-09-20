@@ -42,6 +42,7 @@ function RoomManager({ rooms: initialRooms }: RoomManagerProps): React.ReactNode
         }
     }
 
+
     return (
         <>
             <div className='room-manager--container' style={{ display: focusedRoom.key === -1 ? 'none' : 'block' }}>

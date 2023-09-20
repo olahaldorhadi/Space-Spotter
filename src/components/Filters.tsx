@@ -1,5 +1,4 @@
 import Dropdown from './DropdownMenu';
-import SearchButton from './SearchButton';
 import './Filters.css';
 import FavoritesButton from './FavoritesButton';
 import { useContext, useEffect, useState } from 'react';
@@ -34,7 +33,6 @@ const Filters = () => {
     //                 <input type="number" placeholder='Størrelse?' className='filters--number-input' onChange={(e): void => { setSize(e.target.value); }} />
     //                 <Dropdown description={'Romtype'} inputType={'roomtype'} onChange={(value: string): void => { setRoomType(value); }} />
     //                 <FavoritesButton description={'Se favoritter'} onChange={(value: boolean): void => { setFavorites(value); }} />
-    //                 <SearchButton description={'Søk'} />
     //             </div>
     //         </div>
     //     </>
@@ -74,7 +72,6 @@ const Filters = () => {
                             setFavorites(value);
                         }} 
                     />
-                    <SearchButton description={'Søk'} />
                 </div>
             </div>
         </>
