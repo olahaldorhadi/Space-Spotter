@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './FavoritesButton.css';
 
 
@@ -9,16 +9,14 @@ interface FavoritesButtonProps {
 
 const FavoritesButton: React.FC<FavoritesButtonProps> = ({ description, onChange }) => {
 
-    let currentState: boolean = false;
+    const [currentState, setCurrentState] = useState(false);
     
     const handleClick = () => {
-        // Call the onChange prop when the button is clicked
         if (onChange) {
-            currentState = !currentState;
-            console.log(currentState)
-          onChange(currentState);
+            setCurrentState(!currentState);
+            onChange(!currentState);
         }
-      };
+    };
 
     return (
         <>

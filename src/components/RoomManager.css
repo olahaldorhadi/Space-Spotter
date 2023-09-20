@@ -27,8 +27,6 @@
     color: var(--offblack);
     border: 2px black solid;
     width: 500px;
-    /* margin-left: auto;
-    margin-right: auto; */
     flex-direction: column;
     display: flex;
     margin-left: auto;
@@ -40,7 +38,7 @@
 .room-manager--top-row {
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;  /* Add this line */
+    align-items: center; 
     display: flex;
     padding-left: 24px;
     padding-right: 24px;
@@ -66,7 +64,6 @@
     width: 50px;
     height: 50px;
     padding: 8px;
-    /* position: relative; */
     display: inline-block;
     color: rgb(68, 149, 149);
     font-weight:900;

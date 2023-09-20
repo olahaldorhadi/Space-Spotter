@@ -26,9 +26,7 @@ interface FilterContextProps {
   setFavorites: React.Dispatch<React.SetStateAction<boolean>>;
   campus: string;
   setCampus: React.Dispatch<React.SetStateAction<string>>;
-  // favoriteRooms: Room[]; 
-  // addFavoriteRoom: (room: Room) => void;
-  // removeFavoriteRoom: (roomId: string) => void;
+
 }  
 
 const FilterContext = createContext<FilterContextProps | undefined>(undefined);
@@ -38,16 +36,7 @@ const FilterProvider: React.FC<FilterProviderProps> = ({ children }) => {
   const [roomType, setRoomType] = useState('');
   const [favorites, setFavorites] = useState(false);
   const [campus, setCampus] = useState('');
-  // const [favoriteRooms, setFavoriteRooms] = useState<Room[]>([]);
 
-  // const addFavoriteRoom = (room: Room) => {
-
-  //   setFavoriteRooms((prev) => [...prev, room]);
-  // };
-
-  // const removeFavoriteRoom = (roomId: string) => {
-  //   setFavoriteRooms((prev) => prev.filter((room) => room.id !== roomId));
-  // };
 
   return (
     <FilterContext.Provider 
@@ -60,9 +49,6 @@ const FilterProvider: React.FC<FilterProviderProps> = ({ children }) => {
         setFavorites, 
         campus, 
         setCampus, 
-        // favoriteRooms,  // add this line
-        // addFavoriteRoom,  // add this line
-        // removeFavoriteRoom  // add this line
       }}
     >
       {children}

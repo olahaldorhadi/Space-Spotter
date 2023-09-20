@@ -23,22 +23,18 @@ function RoomManager({ rooms: initialRooms }: RoomManagerProps): React.ReactNode
     });
 
     const handleClick = (room: typeof rooms[0]) => {
-        console.log(focusedRoom.areaname)
-        console.log(focusedRoom.favorite)
-        console.log(room.key)
+
         setFocusedRoom(room);
     }
 
     const handleFavoriteClick = () => {   //should change text to ★
-        console.log(focusedRoom.favorite)
+        console.log("favorite was " + focusedRoom.favorite)
         setFocusedRoom(prevState => ({
             ...prevState,
             favorite: !prevState.favorite,
         }))
-        if (!addString(focusedRoom.name)){ //Returns true and adds roomname if localStorage already contains room, else false
-            console.log("room " + focusedRoom.name + " already favorite, localstorage before rm: " + favoriteRooms)
+        if (!addString(focusedRoom.name)){ 
             removeString(focusedRoom.name)
-            console.log("localstorage after rm: " + getList())
         }
     }
 

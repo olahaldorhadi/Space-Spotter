@@ -31,57 +31,6 @@ export const campusList = [
     { key: 9, optionsText: "Boks" },
     { key: 10, optionsText: "Laboratorium" },
   ]
-  
-
-// const DropdownMenu: React.FC<DropdownMenuProps> = ({ description, inputType }) => {
-//     const [isOpen, setIsOpen] = useState(false);
-//     const [currentDescription, setCurrentDescription] = useState(description);
-
-//     const toggleDropdown = () => {
-//         setIsOpen(!isOpen);
-//     };
-    
-
-//     const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-//         const updatedDescription = event.currentTarget.value || event.currentTarget.innerText;
-//         setCurrentDescription(updatedDescription);
-//         toggleDropdown();
-
-//         // Call the onChange prop with the new value
-//         onChange(updatedDescription);
-//     }
-    
-//     return (
-//         <>
-//             <div className='dropdown'>
-//                 <button onClick={toggleDropdown}>{currentDescription}</button>
-//                 {inputType === "building" && isOpen && (
-//                     <div className='dropdown-menu'> 
-//                         {campusList.map(campus => (
-//                             <button onClick={handleButtonClick} key={campus.key}>{campus.optionsText}</button>
-//                         ))}
-//                     </div>
-//                 )}
-//                 {/* {isOpen && inputType === "building" (
-//                     <div className='dropdown-menu'> 
-//                         {campusList.map(campus => (
-//                             <button onClick={handleButtonClick} key={campus.key}>{campus.optionsText}</button>
-//                         ))}
-//                     </div>
-//                 )} */}
-//                 {inputType === "roomtype" && isOpen && (
-//                     <div className='dropdown-menu'> 
-//                         {typeList.map(type => (  // Changed from campusList to typeList for room types
-//                             <button onClick={handleButtonClick} key={type.key}>{type.optionsText}</button>
-//                         ))}
-//                     </div>
-//                 )}
-//             </div>
-//         </>
-//     )
-// }
-
-// export default DropdownMenu;
 
 const DropdownMenu: React.FC<DropdownMenuProps> = ({ description, inputType, onChange }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -96,7 +45,6 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ description, inputType, onC
         setCurrentDescription(updatedDescription);
         toggleDropdown();
 
-        // Call the onChange prop with the new value
         console.log(updatedDescription)
         onChange(updatedDescription);
     }

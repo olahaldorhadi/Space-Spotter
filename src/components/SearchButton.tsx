@@ -4,7 +4,6 @@ import './SearchButton.css';
 
 interface SearchButtonProps {
     description: string;
-    // onChange: (value: string) => void;
 }
 
 const SearchButton: React.FC<SearchButtonProps> = ({ description }) => {

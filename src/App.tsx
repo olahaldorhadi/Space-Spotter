@@ -2,11 +2,9 @@ import React from 'react';
 import './App.css';
 import Header from './components/Header';
 import Filters from './components/Filters';
-// import FilterSection from './components/FilterSection';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import RoomManager from './components/RoomManager';
 import useFilteredRooms from './components/useFilteredRooms';
-// import FilterButton from './components/FilterButton';
 import { FilterProvider } from './components/FilterContext';
 
 const queryClient = new QueryClient();
@@ -21,16 +19,6 @@ const AppContent = () => {
   if (error) {
     return <div>An error occurred: {error.message}</div>;
   }
-  
-  // const testRoom = {
-  //     key: 1,
-  //     name: "Test Room",
-  //     size: "20",
-  //     bookable: "Yes",
-  //     type: "Seminar",
-  //     buildingname: "Test Building",
-  //     areaname: "Test Area",
-  // };
 
   return (
     <>
