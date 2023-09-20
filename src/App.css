@@ -4,6 +4,12 @@
   text-align: center;
 }
 
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+}
+
 .logo {
   height: 1em;
   padding: 1.5em;
@@ -40,7 +46,21 @@
   color: #888;
 }
 
+.main-content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .app-styling{
   display: flex;
   flex-direction: column;
+}
+
+.roommanager-div{
+  margin-bottom: 2%;
+}
+
+.app-styling {
+  flex-grow: 1;
 }

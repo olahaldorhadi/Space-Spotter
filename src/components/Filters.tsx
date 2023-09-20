@@ -1,5 +1,4 @@
 import Dropdown from './DropdownMenu';
-import SearchButton from './SearchButton';
 import './Filters.css';
 import FavoritesButton from './FavoritesButton';
 import { useContext, useEffect, useState } from 'react';
@@ -38,10 +37,12 @@ const Filters = () => {
                         type="number" 
                         placeholder={localSize}
                         className='filters--number-input' 
+                        min="1"
                         onChange={(e): void => {
                             setLocalSize(e.target.value);
                             setItem("minSize", e.target.value)
                         }} 
+
                     />
                     <Dropdown 
                         description={localRoomType}
@@ -58,7 +59,6 @@ const Filters = () => {
                             toggleFavorite("favorite"); 
                         }} 
                     />
-                    <SearchButton description={'Søk'} />
                 </div>
             </div>
         </>
