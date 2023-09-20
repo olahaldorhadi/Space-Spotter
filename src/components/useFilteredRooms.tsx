@@ -74,7 +74,6 @@ function useFilteredRooms(): UseFilteredRoomsReturnType {
   const sizeFilter = (room: Room) => parseInt(room.size) >= size; 
   const typeFilter = (room: Room) => room.type === roomType;
   const favoritesFilter = favorites ? ((room: Room) => (getList() || []).includes(room.name)) : (() => true);
-  console.log(getList())
 
   const filteredRooms = data?.data.filter(room => sizeFilter(room) && areaNameFilter(room) && typeFilter(room) && favoritesFilter(room))
     .map((room, index) => ({

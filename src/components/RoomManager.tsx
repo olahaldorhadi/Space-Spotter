@@ -28,7 +28,6 @@ function RoomManager({ rooms: initialRooms }: RoomManagerProps): React.ReactNode
     }
 
     const handleFavoriteClick = () => {   //should change text to ★
-        console.log("favorite was " + focusedRoom.favorite)
         setFocusedRoom(prevState => ({
             ...prevState,
             favorite: !prevState.favorite,

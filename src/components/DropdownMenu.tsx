@@ -44,8 +44,6 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ description, inputType, onC
         const updatedDescription = event.currentTarget.value || event.currentTarget.innerText;
         setCurrentDescription(updatedDescription);
         toggleDropdown();
-
-        console.log(updatedDescription)
         onChange(updatedDescription);
     }
     
