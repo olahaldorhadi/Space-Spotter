@@ -51,11 +51,12 @@ const Filters = () => {
                     />
                     <input 
                         type="number" 
-                        placeholder={localSize}
+                        placeholder='Størrelse?' 
                         className='filters--number-input' 
-                        onChange={(e): void => {
-                            setLocalSize(e.target.value);
-                            setItem("minSize", e.target.value)
+                        min="1"
+                        onChange={(e): void => { 
+                            const value = parseInt(e.target.value);
+                            setSize(value < 1 ? 1 : value); 
                         }} 
                     />
                     <Dropdown 
