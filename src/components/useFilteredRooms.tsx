@@ -1,8 +1,8 @@
 import { useQuery } from 'react-query'; 
 import { useContext } from 'react';
 import { FilterContext } from './FilterContext';
-
-//This is a custom hook
+import { checkIfFavoriteIsTrue } from '../utils/sessionStorageUtil';
+import { getList } from '../utils/localStorageUtil';
 
 interface CustomError {
   message: string;
@@ -18,7 +18,6 @@ interface Room {
   student_booking: string;
   type: string;
   favorite: boolean;
-  // add other properties as necessary
 }
 
 interface DataResponse {
@@ -71,27 +70,21 @@ function useFilteredRooms(): UseFilteredRoomsReturnType {
   const { data, error, isLoading } = useQuery<DataResponse, CustomError>('roomDetails', fetchRoomDetails);
   
   const { campus, size, roomType, favorites } = useContext(FilterContext);
-  console.log("Size: " + size)
-  console.log("Favorites: " + favorites)
-
-  // Define your filters here
   const areaNameFilter = (room: Room) => room.areaname === campus; 
   const sizeFilter = (room: Room) => parseInt(room.size) >= size; 
   const typeFilter = (room: Room) => room.type === roomType;
-  const favoritesFilter = (room: Room) => room.favorite === favorites;
-  // const favoritesFilter = () => true;
+  const favoritesFilter = favorites ? ((room: Room) => (getList() || []).includes(room.name)) : (() => true);
+  console.log(getList())
 
-  
-  // Apply the filters and transform the data to the desired format
-  const filteredRooms = data?.data.filter(room => sizeFilter(room) && areaNameFilter(room) && typeFilter(room) /*&& !favoritesFilter(room)*/)
+  const filteredRooms = data?.data.filter(room => sizeFilter(room) && areaNameFilter(room) && typeFilter(room) && favoritesFilter(room))
     .map((room, index) => ({
       key: index,
       name: room.name,
-      size: room.size, // Assuming `room.size` is the property for size
+      size: room.size, 
       bookable: room.student_booking == "1" ? "Kan bookes" : "Kan ikke bookes",
-      type: room.type, // You might want to replace this with actual data from your dataset
-      buildingname: room.buildingname, // You might want to replace this with actual data from your dataset
-      areaname: room.areaname // You might want to replace this with actual data from your dataset
+      type: room.type,
+      buildingname: room.buildingname,
+      areaname: room.areaname
     }));
   
 

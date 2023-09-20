@@ -24,3 +24,22 @@ export const setItem = (key: string, value: any) => {
     }
   };
   
+  export const toggleFavorite = (key: string) => {
+    try {
+      const currentVal = checkIfFavoriteIsTrue(key)
+      const newVal = !currentVal
+      setItem(key, newVal);
+    } catch (error) {
+      console.error("Error toggling favorite in sessionStorage:", error);
+    }
+  };
+  
+  export const checkIfFavoriteIsTrue = (key: string) => {
+    try {
+      return getItem(key) || false;
+    }
+    catch (error){
+      console.error("Error checking if favorite is true in sessionStorage:", error);
+
+    }
+  }
