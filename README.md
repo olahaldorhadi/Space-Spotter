@@ -43,5 +43,68 @@ During our development process we had difficulties with testing the web applicat
 ### App.test.tsx
 This file checked that the app loaded without crashing. This test passed, until we changed the config files to accommodate for the tests in our other files. We could not get it to work again, as Jest did not work. 
 
+Could not push file, so it is here:
+```
+import { render } from "@testing-library/react";
+import App from "../src/App";
+import React from "react";
+
+describe("<App />", () => {
+  test("renders App component without crashing", () => {
+    render(<App />);
+  });
+});
+```
+
 ### Filters.test.tsx
 This file was supposed to use mocking to retrieve a room. We could not make this work. Our main reason seemed to be that we could not make Jest work. We could not find issues in the file itself, and our error messages pointed us to our config files, but this is difficult to pinpoint.
+
+Could not push file, so it is here:
+```
+import { rest } from 'msw'
+import { setupServer } from 'msw/node'
+import { render, screen } from '@testing-library/react';
+import Filters from '../src/components/Filters'
+import React from 'react';
+
+const server = setupServer(
+    rest.get('/api/endpoint', (_, res, ctx) => {
+        return res(
+            ctx.json({ 
+                data: [
+                    {
+                        id: '1',
+                        name: 'Room 1',
+                        acronym: 'R1',
+                        size: '100',
+                        size_exam: '80',
+                        buildingname: 'Building A',
+                        areaname: 'Mock Campus',
+                        student_booking: '1',
+                        type: 'Lecture',
+                        favorite: false,
+                    },
+                ]
+            }),
+        )
+    }),
+)  
+
+beforeAll(() => {
+    server.listen();
+})
+
+afterAll(() => {
+    server.close();
+})
+
+test('Renders a room', () => {
+    jest.mock('../utils/sessionStorageUtil', () => ({
+        getItem: jest.fn(() => 'Mock Campus')
+    }));
+
+    render(<Filters />);
+
+    expect(screen.getByText('Mock Campus')).toBeInTheDocument();
+})
+```
