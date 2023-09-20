@@ -34,3 +34,14 @@ This has been provided on blackboard as stated in the project description.
 1. After installation, run `npm run dev` to start the development server.
 2. Open your web browser and access the application at the localhost appearing in the terminal.
 3. Use the filtering options to search for rooms and interact with the favorites feature.
+
+# Difficulties
+
+## Testing
+During our development process we had difficulties with testing the web application. This lead to us not having any working tests. There is a folder called tests, with incomplete work. This is to illustrate what we tried to accomplish. 
+
+### App.test.tsx
+This file checked that the app loaded without crashing. This test passed, until we changed the config files to accommodate for the tests in our other files. We could not get it to work again, as Jest did not work. 
+
+### Filters.test.tsx
+This file was supposed to use mocking to retrieve a room. We could not make this work. Our main reason seemed to be that we could not make Jest work. We could not find issues in the file itself, and our error messages pointed us to our config files, but this is difficult to pinpoint.
