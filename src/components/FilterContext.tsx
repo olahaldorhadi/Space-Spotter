@@ -1,18 +1,5 @@
 import React, { useState, createContext, ReactNode } from 'react';
 
-// interface Room {
-//   id: string;
-//   name: string;
-//   acronym: string;
-//   size: string;
-//   size_exam: string;
-//   buildingname: string;
-//   areaname: string;
-//   student_booking: string;
-//   type: string;
-//   favorite: boolean;
-// }
-
 interface FilterProviderProps {
     children: ReactNode;
 }

@@ -1,7 +1,6 @@
 import { useQuery } from 'react-query'; 
 import { useContext } from 'react';
 import { FilterContext } from './FilterContext';
-// import { checkIfFavoriteIsTrue } from '../utils/sessionStorageUtil';
 import { getList } from '../utils/localStorageUtil';
 
 interface CustomError {
