@@ -2,7 +2,7 @@ import Dropdown from './DropdownMenu';
 import './Filters.css';
 import FavoritesButton from './FavoritesButton';
 import { useEffect, useState } from 'react';
-import { useFilterContext } from './FilterContext';
+import { useFilterContext } from './FilterHooks';
 import { setItem, getItem, toggleFavorite, checkIfFavoriteIsTrue } from '../utils/sessionStorageUtil';
 
 

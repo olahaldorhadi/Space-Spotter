@@ -7,6 +7,7 @@ interface DropdownMenuProps {
     onChange: (value: string) => void;
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const campusList = [
     { key: 0, optionsText: "Gløshaugen" },
     { key: 1, optionsText: "Dragvoll" },
@@ -18,6 +19,7 @@ export const campusList = [
     { key: 7, optionsText: "Solsiden" },
   ]
 
+  // eslint-disable-next-line react-refresh/only-export-components
   export const typeList = [
     { key: 0, optionsText: "Grupperom" },
     { key: 1, optionsText: "Undervisningsrom" },
