@@ -61,7 +61,7 @@ const Filters = () => {
                         }} 
                     />
                     <Dropdown 
-                        description={localRoomType} 
+                        description={localRoomType}
                         inputType={'roomtype'} 
                         onChange={(value: string): void => {
                             setLocalRoomType(value);
