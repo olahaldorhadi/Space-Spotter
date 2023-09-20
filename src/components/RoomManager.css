@@ -7,26 +7,31 @@
     margin-top: 10px;
 }
 
+
 .RoomManager--ListItem {
     display: flex;
     flex-wrap: wrap;
     text-align: left;
-    width: 50%;
+    width: 70%;
     justify-self: center;
     font-size: large;
     color: var(--offblack);
     padding: 0px 10px;
-    border-top: 1px black solid;
-    border-bottom: 1px black solid;
-    border-left: 2px black solid;
-    border-right: 2px black solid;
+    border-top: 1px var(--orange) solid;
+    border-bottom: 1px var(--orange) solid;
+    border-left: 2px var(--orange)solid;
+    border-right: 2px var(--orange) solid;
     background-color: var(--offwhite);
+}
+
+.RoomManager--ListItem:hover {
+    background-color: var(--light-blue);
 }
 
 .RoomManager--Container {
     color: var(--offblack);
-    border: 2px black solid;
-    width: 500px;
+    border: 2px var(--orange) solid;
+    width: 70%;
     /* margin-left: auto;
     margin-right: auto; */
     flex-direction: column;
@@ -35,6 +40,7 @@
     margin-right: auto;
     margin-top: 10px;
     padding: 10px;
+    margin-bottom: 10px;
 }
 
 .RoomManager--Top-row {
@@ -59,7 +65,7 @@
 .RoomManager-Star-button button{
     box-sizing: border-box;
     background-color: var(--offwhite);
-    border: 1px black solid;
+    border: 1px var(--offblack) solid;
     color: var(--offblack);
     border-radius: 5px;
     margin: 5px;

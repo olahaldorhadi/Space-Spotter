@@ -9,3 +9,9 @@
     position: relative;
     display: inline-block;
 }
+
+@media (max-width: 768px){
+    .FavoritesButton-button button{
+        width: 150px;
+    }
+}

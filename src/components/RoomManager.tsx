@@ -35,6 +35,7 @@ function RoomManager({ rooms: initialRooms }: RoomManagerProps): React.ReactNode
         console.log(focusedRoom.favorite)
     }
 
+
     return (
         <>
             <div className='RoomManager--Container' style={{ display: focusedRoom.key === -1 ? 'none' : 'block' }}>

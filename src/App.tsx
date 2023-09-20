@@ -8,6 +8,7 @@ import RoomManager from './components/RoomManager';
 import useFilteredRooms from './components/useFilteredRooms';
 // import FilterButton from './components/FilterButton';
 import { FilterProvider } from './components/FilterContext';
+import Footer from './components/Footer';
 
 const queryClient = new QueryClient();
 
@@ -34,13 +35,16 @@ const AppContent = () => {
 
   return (
     <>
+      <div className="main-content">
         <div className="app-styling">
           <Header />
           <Filters />
-          <div>
+          <div className="roommanager-div">
             <RoomManager rooms={fetchedRooms || []} />
           </div>
         </div>
+        <Footer />
+      </div>
     </>
   );
 };
