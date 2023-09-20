@@ -28,7 +28,6 @@ function RoomManager({ rooms: initialRooms }: RoomManagerProps): React.ReactNode
     }
 
     const handleFavoriteClick = () => {   //should change text to ★
-        console.log("favorite was " + focusedRoom.favorite)
         setFocusedRoom(prevState => ({
             ...prevState,
             favorite: !prevState.favorite,
@@ -58,9 +57,9 @@ function RoomManager({ rooms: initialRooms }: RoomManagerProps): React.ReactNode
 
             <div className='room-manager--entire-list'>
                 {rooms.map(room => (
-                    <div className='room-manager--list-container'>
-                        <div className="room-manager--list-item" key={room.key}
-                        onClick={() => handleClick(room)}>
+                    <div className='room-manager--list-container' key={room.key}>
+                        <div className="room-manager--list-item" 
+                            onClick={() => handleClick(room)}>
                             <p><b>{room.name}</b> Bygg: {room.buildingname} - Størrelse: {room.size} plasser</p>
                         </div>
                     </div>

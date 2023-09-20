@@ -13,6 +13,10 @@
     right: 0;
 }
 
+.footer--footer p {
+    color: var(--offwhite);
+}
+
 .footer--footer-content {
     max-width: 90%; 
     width: 100%;
