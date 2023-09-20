@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import {  RoomManagerProps } from './RoomObject'
 import './RoomManager.css'
+import { addString, removeString, getList } from '../utils/localStorageUtil';
 
 function RoomManager({ rooms: initialRooms }: RoomManagerProps): React.ReactNode {
+    const favoriteRooms = getList() || [];
 
     const rooms = initialRooms.map(room => ({
         ...room,
-        favorite: false,
+        favorite: favoriteRooms.includes(room.name),    
     }));
 
     const [focusedRoom, setFocusedRoom] = useState({
@@ -23,29 +25,33 @@ function RoomManager({ rooms: initialRooms }: RoomManagerProps): React.ReactNode
     const handleClick = (room: typeof rooms[0]) => {
         console.log(focusedRoom.areaname)
         console.log(focusedRoom.favorite)
+        console.log(room.key)
         setFocusedRoom(room);
     }
 
-    const handleFavoriteClick = () => {
+    const handleFavoriteClick = () => {   //should change text to ★
         console.log(focusedRoom.favorite)
         setFocusedRoom(prevState => ({
             ...prevState,
             favorite: !prevState.favorite,
         }))
-        console.log(focusedRoom.favorite)
+        if (!addString(focusedRoom.name)){ //Returns true and adds roomname if localStorage already contains room, else false
+            console.log("room " + focusedRoom.name + " already favorite, localstorage before rm: " + favoriteRooms)
+            removeString(focusedRoom.name)
+            console.log("localstorage after rm: " + getList())
+        }
     }
 
 
     return (
         <>
-            <div className='RoomManager--Container' style={{ display: focusedRoom.key === -1 ? 'none' : 'block' }}>
-                <div className="RoomManager--Top-row">
+            <div className='room-manager--container' style={{ display: focusedRoom.key === -1 ? 'none' : 'block' }}>
+                <div className="room-manager--top-row">
                     <h2>{focusedRoom.name}</h2>
-                    <div className='RoomManager-Star-button'>
-                        <button onClick={handleFavoriteClick}>
+                    <button className='room-manager--star-button'
+                         onClick={handleFavoriteClick}>
                             ☆
-                        </button>
-                    </div>
+                    </button>
                 </div>  
                 <p>Størrelse: {focusedRoom.size}</p>
                 <p>{focusedRoom.bookable}</p>
@@ -54,10 +60,11 @@ function RoomManager({ rooms: initialRooms }: RoomManagerProps): React.ReactNode
                 <p>Campus: {focusedRoom.areaname}</p>
             </div>
 
-            <div className='RoomManager--EntireList'>
+            <div className='room-manager--entire-list'>
                 {rooms.map(room => (
-                    <div className='RoomManager--ListContainer'>
-                        <div className="RoomManager--ListItem" key={room.key} onClick={() => handleClick(room)}>
+                    <div className='room-manager--list-container'>
+                        <div className="room-manager--list-item" key={room.key}
+                        onClick={() => handleClick(room)}>
                             <p><b>{room.name}</b> Bygg: {room.buildingname} - Størrelse: {room.size} plasser</p>
                         </div>
                     </div>

@@ -43,6 +43,9 @@ const AppContent = () => {
             <RoomManager rooms={fetchedRooms || []} />
           </div>
         </div>
+        <div>
+          <p>Pssst, du kan trykke på et rom for å se mer informasjon eller opprette en favoritt</p>
+        </div>
         <Footer />
       </div>
     </>
