@@ -51,13 +51,14 @@ const Filters = () => {
                     />
                     <input 
                         type="number" 
-                        placeholder='Størrelse?' 
+                        placeholder={localSize}
                         className='filters--number-input' 
                         min="1"
-                        onChange={(e): void => { 
-                            const value = parseInt(e.target.value);
-                            setSize(value < 1 ? 1 : value);
+                        onChange={(e): void => {
+                            setLocalSize(e.target.value);
+                            setItem("minSize", e.target.value)
                         }} 
+
                     />
                     <Dropdown 
                         description={localRoomType}
