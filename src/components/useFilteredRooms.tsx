@@ -1,7 +1,7 @@
 import { useQuery } from 'react-query'; 
 import { useContext } from 'react';
 import { FilterContext } from './FilterContext';
-import { checkIfFavoriteIsTrue } from '../utils/sessionStorageUtil';
+// import { checkIfFavoriteIsTrue } from '../utils/sessionStorageUtil';
 import { getList } from '../utils/localStorageUtil';
 
 interface CustomError {
@@ -69,9 +69,9 @@ interface UseFilteredRoomsReturnType {
 function useFilteredRooms(): UseFilteredRoomsReturnType {
   const { data, error, isLoading } = useQuery<DataResponse, CustomError>('roomDetails', fetchRoomDetails);
   
-  const { campus, size, roomType, favorites } = useContext(FilterContext);
+  const { campus, size, roomType, favorites } = useContext(FilterContext) || {};
   const areaNameFilter = (room: Room) => room.areaname === campus; 
-  const sizeFilter = (room: Room) => parseInt(room.size) >= size; 
+  const sizeFilter = (room: Room) => parseInt(room.size) >= parseInt(size || "0"); 
   const typeFilter = (room: Room) => room.type === roomType;
   const favoritesFilter = favorites ? ((room: Room) => (getList() || []).includes(room.name)) : (() => true);
 
@@ -83,7 +83,8 @@ function useFilteredRooms(): UseFilteredRoomsReturnType {
       bookable: room.student_booking == "1" ? "Kan bookes" : "Kan ikke bookes",
       type: room.type,
       buildingname: room.buildingname,
-      areaname: room.areaname
+      areaname: room.areaname,
+      favorite: room.favorite
     }));
   
 

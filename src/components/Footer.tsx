@@ -1,5 +1,4 @@
 import './Footer.css';
-import Logo from '../assets/SpaceSpotterLogo.png';
 
 const Footer = () => {
 

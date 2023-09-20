@@ -1,4 +1,4 @@
-import React, { useState, createContext, ReactNode, useContext } from 'react';
+import React, { useState, createContext, ReactNode } from 'react';
 
 // interface Room {
 //   id: string;
@@ -17,7 +17,7 @@ interface FilterProviderProps {
     children: ReactNode;
 }
 
-interface FilterContextProps {
+export interface FilterContextProps {
   size: string;
   setSize: React.Dispatch<React.SetStateAction<string>>;
   roomType: string;
@@ -55,12 +55,4 @@ const FilterProvider: React.FC<FilterProviderProps> = ({ children }) => {
     </FilterContext.Provider>
   );
 };
-export function useFilterContext(): FilterContextProps {
-  const context = useContext(FilterContext);
-  if (!context) {
-      throw new Error("useFilterContext must be used within a FilterProvider");
-  }
-  return context;
-}
-
 export { FilterContext, FilterProvider };
