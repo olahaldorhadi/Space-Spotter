@@ -1,6 +1,6 @@
 # Documentation from the developers
 
-## Description of project
+## Description of the project Space Spotter
 The project involves a web page with the possibility to display all rooms on the NTNU campuses. 
 
 ## Functional requirements
@@ -9,7 +9,7 @@ The user is presentet with a list after the sucessfull filtering selection. In t
 ## Technical requirements
 The web page is based on typescript and react, and react state and props are used. Space Spotter retreives information from a REST API by using TanStack Query. The data is collected from the room booking page from NTNU using their Swagger-service (https://tp.educloud.no/ntnu/ws/swagger-ui/dist/). The service uses local and session storage. The web page is tested on devices such as desktops, PC, Mac, mobile phones and on different web browsers (Chrome, Safari and Brave). 
 
-## Development and testinginstruksjoner
+## Development and testing instructions
 We have used Node.js v20.5+ and npm v9.8+ and created the project using vite 4.4 where we used the project type React and Typescript. The project began with using the source code provided from gitlab and we have used issues with branches according to these. This to have controll over each task for each developer. Through our prosess we have taken advantage of linting and Prettier.  
 
 ## Choices of solutions
