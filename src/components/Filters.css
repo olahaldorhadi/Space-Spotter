@@ -23,7 +23,7 @@
 .filters--number-input {
     background-color: var(--offwhite);
     color: var(--offblack);
-    font-size: medium;
+    font-size: 1em;
     font-weight: 500;
     border-radius: 5px;
     margin: 5px;

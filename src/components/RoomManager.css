@@ -24,13 +24,14 @@
     background-color: var(--offwhite);
 }
 
-.RoomManager--ListItem:hover {
+.room-manager--list-item:hover {
     background-color: var(--light-blue);
 }
 
 .room-manager--container {
     color: var(--offblack);
     border: 2px var(--orange) solid;
+    background-color: var(--offwhite);
     width: 70%;
     /* margin-left: auto;
     margin-right: auto; */
@@ -46,10 +47,11 @@
 .room-manager--top-row {
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;  /* Add this line */
+    align-items: center;
     display: flex;
     padding-left: 24px;
     padding-right: 24px;
+    border-bottom: 3px var(--light-organge) solid;
 }
 
 .room-manager--top-row h2 {

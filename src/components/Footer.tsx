@@ -9,7 +9,7 @@ const Footer = () => {
         <div className='footer--footer-content'>
           <div className='footer--explanation-text'>
           </div>
-          <img src={Logo} />
+          <p>Pssst, du kan trykke på et rom for å se mer informasjon eller opprette en favoritt</p>
         </div>
       </div>
     </>
