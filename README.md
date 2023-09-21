@@ -17,7 +17,7 @@ In regards of the API call, we decided on a solution that makes the call at once
 
 The favourite function has been connected to the local storage. This to ensure a smooth storage of the information of the usesers favourite room without having to make an account. Local storage has a limit, but we have made sure to stay within these limits when the storage is limited to only the favourite rooms of the user. 
 
-## The work of each deleoper 
+## The work of each developer 
 This has been provided on blackboard as stated in the project description. 
 
 
