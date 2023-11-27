@@ -1,4 +1,4 @@
-.FavoritesButton-button button{
+.FavoritesButton-button button {
     background-color: var(--offwhite);
     color: var(--offblack);
     border-radius: 5px;
@@ -10,8 +10,8 @@
     display: inline-block;
 }
 
-@media (max-width: 768px){
-    .FavoritesButton-button button{
+@media (max-width: 768px) {
+    .FavoritesButton-button button {
         width: 150px;
     }
 }

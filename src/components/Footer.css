@@ -4,7 +4,7 @@
     height: auto;
     display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
     padding-top: 10px;
     padding-bottom: 10px;
     bottom: 0;
@@ -17,20 +17,20 @@
 }
 
 .footer--footer-content {
-    max-width: 90%; 
+    max-width: 90%;
     width: 100%;
     display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    text-align: center; 
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     margin-bottom: 1%;
 }
 
 .footer--logo {
-    height: auto; 
-    width: 100%; 
-    max-width: 200px; 
-    margin-bottom: 10px; 
+    height: auto;
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 10px;
 }
 
 .footer--footer-content img {
@@ -40,10 +40,10 @@
 }
 
 .footer--explanation-text {
-    text-align: center; 
-    font-size: 1em; 
+    text-align: center;
+    font-size: 1em;
     color: var(--offwhite);
-    margin-top: 10px; 
+    margin-top: 10px;
 }
 
 .footer--explanation-text h1,
@@ -51,4 +51,3 @@
     margin-top: 5px;
     margin-bottom: 10px;
 }
-

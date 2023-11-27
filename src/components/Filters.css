@@ -8,9 +8,9 @@
     padding-bottom: 15px;
     flex-flow: column wrap;
     padding-top: 1px;
-  }
-  
-  .filters--filters-section {
+}
+
+.filters--filters-section {
     display: flex;
     height: 60px;
     align-items: center;
@@ -18,7 +18,7 @@
     background-color: var(--orange);
     border-radius: 5px;
     padding: 5px;
-  }
+}
 
 .filters--number-input {
     background-color: var(--offwhite);
@@ -44,24 +44,23 @@
 
 @media (max-width: 768px) {
     .filters--filters-section {
-      flex-direction: column; /* Stack filter buttons vertically */
-      align-items: center; /* Center-align filter buttons */
-      height: auto; /* Let the content determine the height */
-      margin-bottom: 10px; /* Add some spacing at the bottom */
+        flex-direction: column; /* Stack filter buttons vertically */
+        align-items: center; /* Center-align filter buttons */
+        height: auto; /* Let the content determine the height */
+        margin-bottom: 10px; /* Add some spacing at the bottom */
     }
-  
+
     .filters--filters {
-      width: 100%; /* Force buttons to take the full width of their container */
-      height: auto;
-      text-align: center; /* Center-align buttons */
-      margin: 0px 0; /* Add vertical spacing between buttons */
+        width: 100%; /* Force buttons to take the full width of their container */
+        height: auto;
+        text-align: center; /* Center-align buttons */
+        margin: 0px 0; /* Add vertical spacing between buttons */
     }
-  
+
     /* Adjust padding and margins for better mobile spacing */
     .filters--number-input {
-      margin: 5px 0;
-      width: 130px; /* Make number inputs full width */
-      height: 44px;
+        margin: 5px 0;
+        width: 130px; /* Make number inputs full width */
+        height: 44px;
     }
-  }
-  
+}
