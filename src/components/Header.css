@@ -6,25 +6,25 @@
     top: 0;
     display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
 }
 
 .header-content {
-    max-width: 90%; 
+    max-width: 90%;
     width: 100%;
     display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    text-align: center; 
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     margin-top: 4%;
     margin-bottom: 1%;
 }
 
 .logo {
-    height: auto; 
-    width: 100%; 
-    max-width: 200px; 
-    margin-bottom: 10px; 
+    height: auto;
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 10px;
 }
 
 .header-content img {
@@ -34,10 +34,10 @@
 }
 
 .explanation-text {
-    text-align: center; 
-    font-size: 1em; 
+    text-align: center;
+    font-size: 1em;
     color: var(--offwhite);
-    margin-top: 10px; 
+    margin-top: 10px;
 }
 
 .explanation-text h1,
@@ -45,4 +45,3 @@
     margin-top: 5px;
     margin-bottom: 10px;
 }
-

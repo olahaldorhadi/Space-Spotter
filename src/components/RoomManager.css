@@ -7,7 +7,6 @@
     margin-top: 10px;
 }
 
-
 .room-manager--list-item {
     display: flex;
     flex-wrap: wrap;
@@ -19,7 +18,7 @@
     padding: 0px 10px;
     border-top: 1px var(--orange) solid;
     border-bottom: 1px var(--orange) solid;
-    border-left: 2px var(--orange)solid;
+    border-left: 2px var(--orange) solid;
     border-right: 2px var(--orange) solid;
     background-color: var(--offwhite);
 }
@@ -62,7 +61,7 @@
     margin: 0px;
 }
 
-.room-manager--star-button{
+.room-manager--star-button {
     box-sizing: border-box;
     background-color: var(--offwhite);
     border: 1px var(--offblack) solid;
@@ -74,6 +73,5 @@
     padding: 8px;
     display: inline-block;
     color: rgb(68, 149, 149);
-    font-weight:900;
-    
+    font-weight: 900;
 }

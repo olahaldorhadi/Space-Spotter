@@ -1,53 +1,59 @@
-import React, { useState } from 'react';
-import {  RoomManagerProps } from './RoomObject'
+import React, { useState } from 'react'
+import { RoomManagerProps } from './RoomObject'
 import './RoomManager.css'
-import { addString, removeString, getList } from '../utils/localStorageUtil';
+import { addString, removeString, getList } from '../utils/localStorageUtil'
 
-function RoomManager({ rooms: initialRooms }: RoomManagerProps): React.ReactNode {
-    const favoriteRooms = getList() || [];
+function RoomManager({
+    rooms: initialRooms,
+}: RoomManagerProps): React.ReactNode {
+    const favoriteRooms = getList() || []
 
-    const rooms = initialRooms.map(room => ({
+    const rooms = initialRooms.map((room) => ({
         ...room,
-        favorite: favoriteRooms.includes(room.name),    
-    }));
+        favorite: favoriteRooms.includes(room.name),
+    }))
 
     const [focusedRoom, setFocusedRoom] = useState({
         key: -1,
-        name: "",
-        size: "",
-        bookable: "",
-        type: "",
-        buildingname: "",
-        areaname: "",
+        name: '',
+        size: '',
+        bookable: '',
+        type: '',
+        buildingname: '',
+        areaname: '',
         favorite: false,
-    });
+    })
 
-    const handleClick = (room: typeof rooms[0]) => {
-
-        setFocusedRoom(room);
+    const handleClick = (room: (typeof rooms)[0]) => {
+        setFocusedRoom(room)
     }
 
-    const handleFavoriteClick = () => {   //should change text to ★
-        setFocusedRoom(prevState => ({
+    const handleFavoriteClick = () => {
+        //should change text to ★
+        setFocusedRoom((prevState) => ({
             ...prevState,
             favorite: !prevState.favorite,
         }))
-        if (!addString(focusedRoom.name)){ 
+        if (!addString(focusedRoom.name)) {
             removeString(focusedRoom.name)
         }
     }
 
-
     return (
         <>
-            <div className='room-manager--container' style={{ display: focusedRoom.key === -1 ? 'none' : 'block' }}>
+            <div
+                className="room-manager--container"
+                style={{ display: focusedRoom.key === -1 ? 'none' : 'block' }}
+            >
                 <div className="room-manager--top-row">
                     <h2>{focusedRoom.name}</h2>
-                    <button className='room-manager--star-button'
-                         onClick={handleFavoriteClick}>
-                            ☆
+                    <button
+                        className="room-manager--star-button"
+                        onClick={handleFavoriteClick}
+                    >
+                        ☆
                     </button>
-                </div>  
+                </div>
                 <p>Størrelse: {focusedRoom.size}</p>
                 <p>{focusedRoom.bookable}</p>
                 <p>Type: {focusedRoom.type}</p>
@@ -55,18 +61,26 @@ function RoomManager({ rooms: initialRooms }: RoomManagerProps): React.ReactNode
                 <p>Campus: {focusedRoom.areaname}</p>
             </div>
 
-            <div className='room-manager--entire-list'>
-                {rooms.map(room => (
-                    <div className='room-manager--list-container' key={room.key}>
-                        <div className="room-manager--list-item" 
-                            onClick={() => handleClick(room)}>
-                            <p><b>{room.name}</b> Bygg: {room.buildingname} - Størrelse: {room.size} plasser</p>
+            <div className="room-manager--entire-list">
+                {rooms.map((room) => (
+                    <div
+                        className="room-manager--list-container"
+                        key={room.key}
+                    >
+                        <div
+                            className="room-manager--list-item"
+                            onClick={() => handleClick(room)}
+                        >
+                            <p>
+                                <b>{room.name}</b> Bygg: {room.buildingname} -
+                                Størrelse: {room.size} plasser
+                            </p>
                         </div>
                     </div>
                 ))}
             </div>
         </>
-    );
+    )
 }
 
 export default RoomManager

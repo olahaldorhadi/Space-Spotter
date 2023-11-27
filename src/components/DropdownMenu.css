@@ -18,9 +18,9 @@
 
 .dropdown-menu {
     position: absolute;
-    top: calc(100% + 3px); 
+    top: calc(100% + 3px);
     left: 0;
-    width: 141px; 
+    width: 141px;
     background-color: var(--offwhite);
     color: #111111;
     width: 100%;
@@ -35,9 +35,8 @@
     padding: 8px;
     border-radius: 0px;
     background-color: white;
-
 }
 
 .dropdown-menu button:hover {
-    background-color: #CCCCCC;
+    background-color: #cccccc;
 }
