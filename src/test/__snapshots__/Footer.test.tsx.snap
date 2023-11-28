@@ -1,0 +1,19 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders Footer component 1`] = `
+<div
+  class="footer--footer"
+  data-testid="footer-component"
+>
+  <div
+    class="footer--footer-content"
+  >
+    <div
+      class="footer--explanation-text"
+    />
+    <p>
+      Pssst, du kan trykke på et rom for å se mer informasjon eller opprette en favoritt
+    </p>
+  </div>
+</div>
+`;
