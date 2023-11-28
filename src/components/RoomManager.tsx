@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { RoomManagerProps } from './RoomObject'
 import './RoomManager.css'
 import { addString, removeString, getList } from '../utils/localStorageUtil'
@@ -24,12 +24,13 @@ function RoomManager({
         favorite: false,
     })
 
+    const roomManagerContainerRef = useRef<HTMLDivElement | null>(null)
+
     const handleClick = (room: (typeof rooms)[0]) => {
         setFocusedRoom(room)
     }
 
     const handleFavoriteClick = () => {
-        //should change text to ★
         setFocusedRoom((prevState) => ({
             ...prevState,
             favorite: !prevState.favorite,
@@ -39,9 +40,23 @@ function RoomManager({
         }
     }
 
+    useEffect(() => {
+        // Scroll to the room-manager--container when it is updated with an offset
+        if (roomManagerContainerRef.current) {
+            const offset = -200 // Adjust the offset value as needed
+            const { top } =
+                roomManagerContainerRef.current.getBoundingClientRect()
+            window.scrollTo({
+                top: window.pageYOffset + top + offset,
+                behavior: 'smooth',
+            })
+        }
+    }, [focusedRoom])
+
     return (
         <>
             <div
+                ref={roomManagerContainerRef}
                 className="room-manager--container"
                 style={{ display: focusedRoom.key === -1 ? 'none' : 'block' }}
             >
