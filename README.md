@@ -1,4 +1,5 @@
-# Delivery instructions
+# Space Spotter
+Link to Space Spotter: http://it2810-39.idi.ntnu.no/project1/
 
 ## Installation Instructions
 
@@ -21,6 +22,7 @@ To run Linting `npm run lint`
 ## Testing
 
 You can test the website by running `npm test` in the terminal.
+
 
 # Documentation from the developers
 
@@ -54,15 +56,15 @@ Testing has been utilized with Vitest. This includes component testing with snap
 
 Testing in P1 was perceived as difficult as we had problems with Vitest and Jest. This is something that has been improved in the revised and final version. The project now includes testing of components using Vitest in addition to snapshot testing.
 
-## Change log
+## Changelog
 
 We have made several changes for the final version. These are all based on feedback we have received from our peers. The changes in the revision includes:
 
 -   NEW: Installation and usage of prettier
 -   NEW: Component testing with simple snapshot testing using Vitest
--   NEW: A new scroll to function so the selected room is now in focus.
--   NEW: The favorite button improved in regards to affordance. The button changes color when toggled.
+-   NEW: A new scroll to function so the selected room is now in a better focus.
+-   NEW: The favorite button is improved in regards to affordance. The button changes color when toggled.
 
 ## The work of each developer
-
+ 
 This has been provided on blackboard as stated in the project description.
