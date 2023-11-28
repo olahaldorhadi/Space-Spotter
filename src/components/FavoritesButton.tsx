@@ -21,7 +21,11 @@ const FavoritesButton: React.FC<FavoritesButtonProps> = ({
 
     return (
         <>
-            <div className={`FavoritesButton-button ${currentState ? 'active' : ''}`}>
+            <div
+                className={`FavoritesButton-button ${
+                    currentState ? 'active' : ''
+                }`}
+            >
                 <button onClick={handleClick}>{description}</button>
             </div>
         </>
