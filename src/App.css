@@ -64,3 +64,7 @@
 .app-styling {
     flex-grow: 1;
 }
+
+.FavoritesButton-button.active button {
+    background-color: #ff8000;
+}
